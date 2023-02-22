@@ -56,13 +56,13 @@ const getEthereumContract = async() => {
         const networkId = await web3.eth.net.getId();
         const networkData = await abi.networks[networkId];
 
-        if(networkData) {
-            // Instentiate contract
-            const contract = new web3.eth.Contract(abi.abi, networkData.address);
-            return contract;
-        } else {
-            return null;
-        }
+        // if(networkData) {
+        //     // Instentiate contract
+            const contract = new web3.eth.Contract(abi.abi, "0x5FbDB2315678afecb367f032d93F642f64180aa3");
+        //     return contract;
+        // } else {
+        //     return null;
+        // }
     } else {
         return getGlobalState("contract");
     }
